@@ -1,0 +1,12 @@
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style={{ stopColor: "#387EB8", stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: "#366994", stopOpacity: 1 }} />
+            </linearGradient>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style={{ stopColor: "#FFE052", stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: "#FFC331", stopOpacity: 1 }} />
+            </linearGradient>
+            <path fill="url(#grad1)" d="M127 0c-62 0-72 27-72 27l1 29h72v9H55S0 58 0 128c0 71 49 69 49 69h24v-34s-1-48 54-48h73s49 1 49-48c0-50-40-66-69-66h-53zM92 18a12 12 0 110 24 12 12 0 010-24z"/>
+            <path fill="url(#grad2)" d="M129 256c62 0 72-27 72-27l-1-29h-72v-9h73s55 7 55-63c0-71-49-69-49-69h-24v34s1 48-54 48H56s-49-1-49 48c0 50 40 66 69 66h53zM164 238a12 12 0 110-24 12 12 0 010 24z"/>
+</svg>
