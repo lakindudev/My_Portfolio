@@ -7,6 +7,8 @@ import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
 import Clients from "@/components/Clients";
 import Approach from "@/components/Approach";
+import Contact from "@/components/Contact";
+import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
 import RecentProjects from "@/components/RecentProjects";
@@ -19,10 +21,12 @@ const Home = () => {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        <TechStack />
         <RecentProjects />
+        <TechStack />
         <Experience />
+        <Education />
         <Approach />
+        <Contact />
         <Footer />
       </div>
     </main>
