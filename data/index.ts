@@ -86,7 +86,7 @@ export const projects = [
     des: " This is a responsive and interactive Web Application built with React.js, designed to function as an estate agent web platform. The application allows users to search for properties based on multiple criteria, view detailed property information, and save favorites for easy access—all without a server, using client-side storage.",
     img: "/p2.svg",
     iconLists: ["/re.svg", "/tail.svg", "/js.svg"],
-    link: "/ui.yoom.com",
+    link: "https://heroic-medovik-2b97c6.netlify.app/",
   },
   {
     id: 3,
@@ -209,5 +209,65 @@ export const socialMedia = [
     id: 4,
     img: "/instagram.svg",
     link: "https://www.instagram.com/lakindu_x/",
+  },
+];
+
+// ... your existing exports ...
+
+export const techStackData = [
+  {
+    quote: "A JavaScript library for building user interfaces.",
+    name: "React",
+    title: "Frontend Framework",
+    icon: "/re.svg",
+  },
+  {
+    quote:
+      "A programming language that conforms to the ECMAScript specification.",
+    name: "JavaScript",
+    title: "Scripting Language",
+    icon: "/js.svg",
+  },
+  {
+    quote: "A superset of JavaScript that compiles to plain JavaScript.",
+    name: "TypeScript",
+    title: "Typed Language",
+    icon: "/ts.svg",
+  },
+  {
+    quote: "A high-level, class-based, object-oriented programming language.",
+    name: "Java",
+    title: "Programming Language",
+    icon: "/java.svg",
+  },
+  {
+    quote: "A powerful framework for building Java applications.",
+    name: "Spring Boot",
+    title: "Java Framework",
+    icon: "/spring.svg",
+  },
+  {
+    quote: "A high-level programming language for general-purpose programming.",
+    name: "Python",
+    title: "Programming Language",
+    icon: "/py.svg",
+  },
+  {
+    quote: "A utility-first CSS framework for creating custom designs.",
+    name: "Tailwind CSS",
+    title: "CSS Framework",
+    icon: "/tail.svg",
+  },
+  {
+    quote: "A JavaScript library for creating 3D graphics.",
+    name: "Three.js",
+    title: "3D Library",
+    icon: "/three.svg",
+  },
+  {
+    quote: "A general-purpose programming language.",
+    name: "C++",
+    title: "Programming Language",
+    icon: "/c.svg",
   },
 ];
