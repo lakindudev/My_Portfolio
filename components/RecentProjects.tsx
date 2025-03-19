@@ -20,9 +20,26 @@ const RecentProjects = () => {
           >
             <PinContainer
               title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              href={
+                item.title === "Estate Agent"
+                  ? "https://heroic-medovik-2b97c6.netlify.app/"
+                  : "#"
+              }
             >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+              <div
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (item.title === "Estate Agent") {
+                    window.open(
+                      "https://heroic-medovik-2b97c6.netlify.app/",
+                      "_blank"
+                    );
+                  } else if (item.link) {
+                    window.open(item.link, "_blank");
+                  }
+                }}
+                className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10"
+              >
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}

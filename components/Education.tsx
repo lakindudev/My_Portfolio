@@ -26,12 +26,6 @@ const educationData = [
 
 const certificationData = [
   {
-    name: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    link: "#",
-  },
-  {
     name: "Full Stack Web Development",
     issuer: "Udemy",
     date: "2022",
@@ -188,12 +182,38 @@ const Education = () => {
             <div className="mt-8 flex justify-center">
               <a
                 href="/lakindu_cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border border-indigo-500 rounded-lg text-indigo-400 hover:bg-indigo-500 hover:text-white transition-all duration-300"
+                download="Lakindu_Perera_CV.pdf"
+                onClick={(e) => {
+                  e.preventDefault();
+                  fetch("/lakindu_cv.pdf")
+                    .then((response) => {
+                      if (response.ok) {
+                        return response.blob();
+                      }
+                      throw new Error("CV file not available");
+                    })
+                    .then((blob) => {
+                      const url = window.URL.createObjectURL(blob);
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = "Lakindu_Perera_CV.pdf";
+                      document.body.appendChild(a);
+                      a.click();
+                      window.URL.revokeObjectURL(url);
+                      a.remove();
+                    })
+                    .catch((error) => {
+                      console.error("Download failed:", error);
+                      alert(
+                        "Sorry, the CV file is currently not available. Please try again later."
+                      );
+                    });
+                }}
+                className="inline-flex items-center px-6 py-3 border border-indigo-500 rounded-lg text-indigo-400 hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 group relative overflow-hidden"
               >
+                <span className="absolute inset-0 w-0 bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-300 group-hover:w-full"></span>
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-5 h-5 mr-2 relative z-10"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -206,7 +226,7 @@ const Education = () => {
                     d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   ></path>
                 </svg>
-                View Full Resume
+                <span className="relative z-10">View Full Resume</span>
               </a>
             </div>
           </motion.div>

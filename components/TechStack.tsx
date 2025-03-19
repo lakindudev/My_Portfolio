@@ -39,7 +39,7 @@ const TechStack = () => {
 
   return (
     <section
-      id="tech-stack"
+      id="skills"
       className="relative py-20 flex flex-col items-center justify-center overflow-hidden bg-transparent"
     >
       <div className="w-full max-w-7xl">

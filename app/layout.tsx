@@ -21,7 +21,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/jsm-logo.png" sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} bg-gradient-to-b from-black to-gray-900 text-white min-h-screen`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

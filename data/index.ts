@@ -1,9 +1,10 @@
 import { link } from "fs";
 
 export const navItems = [
+  { name: "Home", link: "#" },
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Skills", link: "#skills" },
+  { name: "Education", link: "#education" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -74,33 +75,9 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Real time Ticketing System",
-    des: "This project is a Real-Time Event Ticketing System that utilizes the Producer-Consumer pattern to handle concurrent ticket releases and purchases efficiently.",
-    img: "/p1.svg",
-    iconLists: ["/spring.svg", "/re.svg", "/java.svg", "/tail.svg", "/js.svg"],
-    link: "/ui.earth.com",
-  },
-  {
-    id: 2,
-    title: "Estate Agent Project",
-    des: " This is a responsive and interactive Web Application built with React.js, designed to function as an estate agent web platform. The application allows users to search for properties based on multiple criteria, view detailed property information, and save favorites for easy access—all without a server, using client-side storage.",
-    img: "/p2.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/js.svg"],
-    link: "https://heroic-medovik-2b97c6.netlify.app/",
-  },
-  {
-    id: 3,
-    title: "Healthcare Management System",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
-  },
-  {
-    id: 4,
     title: "LunaRest- sleep quality prediction platform",
     des: "LunaRest is a AI driven sleep quality prediction web application...",
-    img: "/p4.svg",
+    img: "/lunarest.png",
     iconLists: [
       "/re.svg",
       "/tail.svg",
@@ -111,79 +88,41 @@ export const projects = [
     ],
     link: "/ui.apple.com",
   },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-];
-
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    title: "Real time Ticketing System",
+    des: "This project is a Real-Time Event Ticketing System that utilizes the Producer-Consumer pattern to handle concurrent ticket releases and purchases efficiently.",
+    img: "/ticketing.png",
+    iconLists: ["/spring.svg", "/re.svg", "/java.svg", "/tail.svg", "/js.svg"],
+    link: "/ui.earth.com",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    title: "Estate Agent Project",
+    des: " This is a responsive and interactive Web Application built with React.js, designed to function as an estate agent web platform. The application allows users to search for properties based on multiple criteria, view detailed property information, and save favorites for easy access—all without a server, using client-side storage.",
+    img: "/estate.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg"],
+    link: "https://heroic-medovik-2b97c6.netlify.app/",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    title: "Healthcare Management System",
+    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    img: "/healthcare.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/three.svg", "/c.svg"],
+    link: "/ui.aiimg.com",
   },
 ];
+
+export const testimonials = [];
+
+export const companies = [];
 
 export const workExperience = [
   {
     id: 1,
     title: "Software Development Group Project",
-    desc: "Making a AI driven Sleep Qulaity managemnet system.I am the Ban=ckend Developer of that porject.",
+    desc: "Making a AI driven Sleep Qulaity managemnet system.I am a fullstack Developer of that project.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },

@@ -25,7 +25,6 @@ const Home = () => {
         <TechStack />
         <Experience />
         <Education />
-        <Approach />
         <Contact />
         <Footer />
       </div>
