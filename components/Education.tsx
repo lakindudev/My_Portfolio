@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MagicButton from "./MagicButton";
 
 const educationData = [
   {
@@ -180,12 +181,29 @@ const Education = () => {
             </div>
 
             <div className="mt-8 flex justify-center">
-              <a
-                href="/lakindu_cv.pdf"
-                download="Lakindu_Perera_CV.pdf"
-                onClick={(e) => {
-                  e.preventDefault();
-                  fetch("/lakindu_cv.pdf")
+              <MagicButton
+                title="View Full Resume"
+                icon={
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                }
+                position="left"
+                handleClick={() => {
+                  fetch(
+                    "https://raw.githubusercontent.com/lakindudev/My_Portfolio/main/lakindu_cv.pdf"
+                  )
                     .then((response) => {
                       if (response.ok) {
                         return response.blob();
@@ -209,25 +227,7 @@ const Education = () => {
                       );
                     });
                 }}
-                className="inline-flex items-center px-6 py-3 border border-indigo-500 rounded-lg text-indigo-400 hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 group relative overflow-hidden"
-              >
-                <span className="absolute inset-0 w-0 bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-300 group-hover:w-full"></span>
-                <svg
-                  className="w-5 h-5 mr-2 relative z-10"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  ></path>
-                </svg>
-                <span className="relative z-10">View Full Resume</span>
-              </a>
+              />
             </div>
           </motion.div>
         </div>
