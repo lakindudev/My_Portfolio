@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
@@ -393,6 +393,10 @@ const GridGlobe = () => {
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
   ];
+
+  useEffect(() => {
+    // Logic that depends on certain variables
+  }, [/* Add dependencies here */]); // Ensure all dependencies are included
 
   return (
     // remove dark:bg-black bg-white h-screen md:h-auto  w-full flex-row py-20

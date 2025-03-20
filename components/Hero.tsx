@@ -1,10 +1,17 @@
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from 'next/image';
+import { useEffect } from "react";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
+  useEffect(() => {
+    // Introduce the error by accessing document directly
+    const element = document.getElementById("some-element"); // This will cause ReferenceError
+  }, []); // This will cause a ReferenceError
+
   return (
     <div className="pb-20 pt-36">
       {/**
@@ -44,9 +51,11 @@ const Hero = () => {
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <div className="relative mb-6">
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-75"></div>
-            <img
+            <Image
               src="/lakindu.JPG"
               alt="Profile"
+              width={128}
+              height={128}
               className="relative w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full border-4 border-gray-900 shadow-lg object-cover"
             />
           </div>
@@ -61,7 +70,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-6 text-sm md:text-lg lg:text-xl text-gray-300 max-w-2xl">
-            Software Engineer & Undergraduate at University of Westminster
+            Undergraduate at University of Westminster
             specializing in creating elegant solutions to complex problems.
           </p>
 

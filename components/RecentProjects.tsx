@@ -1,11 +1,23 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from 'next/image';
+import { useEffect } from "react";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
+  useEffect(() => {
+    // Any logic that needs to run on component mount
+    if (typeof window !== 'undefined') {
+      // Your code that accesses window
+    }
+
+    // Introduce the error by accessing document directly
+    const element = document.getElementById("some-element"); // This will cause ReferenceError
+  }, []); // This ensures the code runs only on the client side
+
   return (
     <div className="py-20">
       <h1 className="heading">
@@ -44,11 +56,19 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image 
+                    src="/bg.png"
+                    alt="bgimg"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <img
+                <Image
                   src={item.img}
                   alt="cover"
+                  width={500}
+                  height={300}
                   className="z-10 absolute bottom-0"
                 />
               </div>
@@ -77,7 +97,7 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image src={icon} alt="icon5" className="p-2" width={32} height={32} />
                     </div>
                   ))}
                 </div>

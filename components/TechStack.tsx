@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 const techStack = [
   { name: "Python", icon: "/py.svg", category: "Languages" },
@@ -37,6 +38,10 @@ const TechStack = () => {
       ? techStack
       : techStack.filter((tech) => tech.category === activeCategory);
 
+  useEffect(() => {
+    // Logic that depends on certain variables
+  }, [/* Add dependencies here */]); // Ensure all dependencies are included
+
   return (
     <section
       id="skills"
@@ -47,7 +52,7 @@ const TechStack = () => {
           Technical Skills
         </h2>
         <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
-          A collection of technologies and tools I've mastered throughout my
+          A collection of technologies and tools I&apos;ve mastered throughout my
           journey as a developer.
         </p>
 
@@ -85,9 +90,11 @@ const TechStack = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="w-12 h-12 mb-4 flex items-center justify-center">
-                <img
+                <Image
                   src={tech.icon}
                   alt={tech.name}
+                  width={48}
+                  height={48}
                   className="w-full h-full object-contain"
                   onError={(e) => {
                     e.currentTarget.src = "/placeholder.svg";
