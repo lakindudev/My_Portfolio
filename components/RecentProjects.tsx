@@ -12,10 +12,10 @@ const RecentProjects = () => {
     // Any logic that needs to run on component mount
     if (typeof window !== 'undefined') {
       // Your code that accesses window
+      
+      // Move the document access inside the check
+      const element = document.getElementById("some-element");
     }
-
-    // Introduce the error by accessing document directly
-    const element = document.getElementById("some-element"); // This will cause ReferenceError
   }, []); // This ensures the code runs only on the client side
 
   return (

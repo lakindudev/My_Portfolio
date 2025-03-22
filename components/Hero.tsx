@@ -8,9 +8,11 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   useEffect(() => {
-    // Introduce the error by accessing document directly
-    const element = document.getElementById("some-element"); // This will cause ReferenceError
-  }, []); // This will cause a ReferenceError
+    // Only access document on the client side
+    if (typeof window !== 'undefined') {
+      const element = document.getElementById("some-element");
+    }
+  }, []);
 
   return (
     <div className="pb-20 pt-36">
@@ -103,31 +105,33 @@ const Hero = () => {
               }
               position="right"
               handleClick={() => {
-                fetch(
-                  "https://raw.githubusercontent.com/lakindudev/My_Portfolio/main/lakindu_cv.pdf"
-                )
-                  .then((response) => {
-                    if (response.ok) {
-                      return response.blob();
-                    }
-                    throw new Error("CV file not available");
-                  })
-                  .then((blob) => {
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement("a");
-                    a.href = url;
-                    a.download = "Lakindu_Perera_CV.pdf";
-                    document.body.appendChild(a);
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                    a.remove();
-                  })
-                  .catch((error) => {
-                    console.error("Download failed:", error);
-                    alert(
-                      "Sorry, the CV file is currently not available. Please try again later."
-                    );
-                  });
+                if (typeof window !== 'undefined') {
+                  fetch(
+                    "https://raw.githubusercontent.com/lakindudev/My_Portfolio/main/lakindu_cv.pdf"
+                  )
+                    .then((response) => {
+                      if (response.ok) {
+                        return response.blob();
+                      }
+                      throw new Error("CV file not available");
+                    })
+                    .then((blob) => {
+                      const url = window.URL.createObjectURL(blob);
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = "Lakindu_Perera_CV.pdf";
+                      document.body.appendChild(a);
+                      a.click();
+                      window.URL.revokeObjectURL(url);
+                      a.remove();
+                    })
+                    .catch((error) => {
+                      console.error("Download failed:", error);
+                      alert(
+                        "Sorry, the CV file is currently not available. Please try again later."
+                      );
+                    });
+                }
               }}
             />
           </div>
